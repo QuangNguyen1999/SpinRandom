@@ -1,0 +1,86 @@
+<html><head><style type="text/css" id="dcoder_stylesheet">body{
+	display:flex;
+	align-items:center;
+}
+#bingotable{
+	width:75%;
+	height:150px;
+	border:double black;
+	margin-left:12.5%;
+}
+#statics
+{
+	height:10%;
+	font-size:10px;
+	padding-left:2px;
+}
+#header{
+	text-align:center;
+	font-weight:bold;
+	color:red;
+	height:20%;
+}
+#reset{
+	width:30%;
+	text-align:center;
+	font-weight:bold;
+	float:left;
+	margin-left:20;
+}
+#spin{
+	width:30%;
+	text-align:center;
+	font-weight:bold;
+	float:right;
+	margin-right:20;
+}
+#content{
+	height:55%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	font-weight:bold;
+	color:lightblue;
+	font-size:36px;
+}
+#footer{
+	height:15%;
+}</style></head><body>
+<div id="bingotable">
+	<div id="header"> BINGO </div>
+	<div id="statics"></div>
+	<div id="content">...</div>
+	<div id="footer">
+		<button id="reset" onclick="CreateArray()">RESET</button>
+		<button id="spin" onclick="Randomize()">SPIN</button>
+	</div>
+</div><script type="text/javascript" id="dcoder_script">var ntmp=99;
+var n=ntmp,n2=n;
+var arr=new Array();
+for(i=0;i<n;i++)
+	arr[i]=i+1;
+function CreateArray()
+{
+	n=ntmp;
+	arr=new Array();
+	for(i=0;i<n;i++)
+		arr[i]=i+1;
+	document.getElementById("content").innerHTML="...";
+	document.getElementById("statics").innerHTML="Amount of Numbers: "+n+"/"+n2;
+}
+function Randomize()
+{
+	if(n>0)
+	{
+		var tmp=Math.floor(Math.random()*n);
+		document.getElementById("content").innerHTML=arr[tmp];
+		document.getElementById("statics").innerHTML="Amount of Numbers: "+(n-1)+"/"+n2;
+		arr.splice(tmp,1);
+		n--;
+	}
+	else
+	{
+		document.getElementById("content").innerHTML="...";
+		document.getElementById("statics").innerHTML="Amount of Numbers: "+n+"/"+n2;
+	}
+}</script></body></html>
