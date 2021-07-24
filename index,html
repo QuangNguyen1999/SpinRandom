@@ -1,7 +1,12 @@
-<html><head><style type="text/css" id="dcoder_stylesheet">body{
+<html>
+<head>
+	<style type="text/css" id="dcoder_stylesheet">
+
+body{
 	display:flex;
 	align-items:center;
 }
+
 #bingotable{
 	width:75%;
 	height:150px;
@@ -45,8 +50,11 @@
 }
 #footer{
 	height:15%;
-}</style></head><body>
-<div id="bingotable">
+}
+	</style>
+</head>
+<body>
+	<div id="bingotable">
 	<div id="header"> BINGO </div>
 	<div id="statics"></div>
 	<div id="content">...</div>
@@ -54,9 +62,9 @@
 		<button id="reset" onclick="CreateArray()">RESET</button>
 		<button id="spin" onclick="Randomize()">SPIN</button>
 	</div>
-</div><script type="text/javascript" id="dcoder_script">var ntmp=99;
-var n=ntmp,n2=n;
-var arr=new Array();
+	</div><script type="text/javascript" id="dcoder_script">var ntmp=99;
+	var n=ntmp,n2=n;
+	var arr=new Array();
 for(i=0;i<n;i++)
 	arr[i]=i+1;
 function CreateArray()
